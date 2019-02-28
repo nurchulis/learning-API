@@ -28,15 +28,16 @@ def main_world():
 ## user sing up
 @app.route('/api/v1/signup',methods=['POST'])
 def signUp():
-    # open connection
+     
+    requests = json.loads(request.data)
+    
 
-    # read request from UI
-    _ava   = request.form['avatar']
-    _user  = request.form['username']
-    _email   = request.form['email']
-    _pass   = request.form['password']
-    _prodi   = request.form['prodi']
-    _ver   = request.form['verifed']
+    _ava   = requests['avatar']
+    _user  = requests['username']
+    _email   = requests['email']
+    _pass   = requests['password']
+    _prodi   = requests['prodi']
+    _ver   = requests['verifed']
     _hash_pass = generate_password_hash(_pass)
 
     if _ava and _user and _email and _pass and _prodi and _ver:
@@ -85,10 +86,15 @@ def show(id):
 
 ## Login with username and password
 @app.route('/api/v1/auth', methods=['POST'])
-def auth():
+def auth(): 
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
+
     conn = mysql.connect()
     cursor = conn.cursor()
-    result=cursor.execute("SELECT * FROM User WHERE username = %s and password = %s",(request.form['username'], request.form['password']))
+    result=cursor.execute("SELECT * FROM User WHERE username = %s and password = %s",(requests['username'], requests['password']))
     data = cursor.fetchall()
     
     if(result):
@@ -96,7 +102,7 @@ def auth():
             dataResponse = {
                 'success'     : 'true',
                 'id_user'     : item[0],
-                'username'    : request.form['username']
+                'username'    : requests['username']
             }
  
         return json.dumps(dataResponse)
@@ -104,13 +110,19 @@ def auth():
     else:
         return json.dumps({'success':'false'})
 
+
 ## Update User where id_user
 @app.route('/api/v1/update/<id>',methods=['POST'])
 def update(id):
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
+    
     conn = mysql.connect()
     cursor = conn.cursor()
     result = cursor.execute("UPDATE User SET avatar = %s, username = %s, email = %s, password = %s, prodi = %s, verifed = %s WHERE id_user = %s",
-                            (request.form['avatar'],request.form['username'],request.form['email'],request.form['password'],request.form['prodi'],request.form['verifed'],int(id)))
+                            (requests['avatar'],requests['username'],requests['email'],requests['password'],requests['prodi'],requests['verifed'],int(id)))
     conn.commit()
     conn.close()
     if(result):
@@ -186,14 +198,17 @@ def get_class_post(id):
 ## Insert Posting
 @app.route('/api/v1/post',methods=['POST'])
 def posting():
-    # open connection
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
     
     # read request from UI
-    _id_class   = request.form['id_class']
-    _id_user  = request.form['id_user']
-    _caption   = request.form['caption']
-    _category   = request.form['category']
-    _file   = request.form['file']
+    _id_class   = requests['id_class']
+    _id_user  = requests['id_user']
+    _caption   = requests['caption']
+    _category   = requests['category']
+    _file   = requests['file']
     
     if _id_class and _id_user and _caption and _category and _file:
         insert_posting(_id_class,_id_user,_caption, _category,_file)
@@ -219,10 +234,15 @@ def insert_posting(id_class,id_user,caption,category,file):
 ## Update post where id_posting
 @app.route('/api/v1/update_post/<id>',methods=['POST'])
 def update_post_(id):
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
+
     conn = mysql.connect()
     cursor = conn.cursor()
     result = cursor.execute("UPDATE Posting SET caption = %s, file = %s WHERE id_posting = %s",
-                            (request.form['caption'],request.form['file'],int(id)))
+                            (requests['caption'],requests['file'],int(id)))
     conn.commit()
     conn.close()
     if(result):
@@ -246,13 +266,16 @@ def delete_post(id):
 ## Join in the Class, insert join in join_class
 @app.route('/api/v1/join',methods=['POST'])
 def join_class_():
-    # open connection
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
     
     # read request from UI
-    _id_user  = request.form['id_user']
-    _id_class = request.form['id_class']
-    _rule   = request.form['rule']
-    _accept   = request.form['accept']
+    _id_user  = requests['id_user']
+    _id_class = requests['id_class']
+    _rule   = requests['rule']
+    _accept   = requests['accept']
     
     if _id_user and _id_class and _rule and _accept:
         insert_join(_id_user,_id_class,_rule, _accept)
@@ -277,6 +300,8 @@ def insert_join(id_user,id_class,rule,accept):
 ## Accept join 
 @app.route('/api/v1/accept_join/<id>/<id_class>',methods=['POST'])
 def accept_join(id,id_class):
+
+
     conn = mysql.connect()
     cursor = conn.cursor()
     result = cursor.execute("UPDATE Join_class SET accept = 1 WHERE id_user = %s AND id_class = %s ",(int(id),int(id_class)))
@@ -292,11 +317,14 @@ def accept_join(id,id_class):
 ## Inser Comment with id_posting
 @app.route('/api/v1/comment',methods=['POST'])
 def comment_():
-    # open connection
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
     
     # read request from UI
-    _id_posting = request.form['id_posting']
-    _data   = request.form['data']
+    _id_posting = requests['id_posting']
+    _data   = requests['data']
     
     if _id_posting and _data:
         insert_comment(_id_posting,_data)
@@ -319,10 +347,15 @@ def insert_comment(id_posting,data):
 ## Update Comment By id_comment
 @app.route('/api/v1/update_comment/<id>',methods=['POST'])
 def update_comment_(id):
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
+
     conn = mysql.connect()
     cursor = conn.cursor()
     result = cursor.execute("UPDATE Comment SET data = %s WHERE id_comment = %s",
-                            (request.form['data'],int(id)))
+                            (requests['data'],int(id)))
     conn.commit()
     conn.close()
     if(result):
