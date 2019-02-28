@@ -4,15 +4,17 @@
 API learning
 **JOIN TO this Trello https://trello.com/b/FutPKgCN/api-elearning For See update development**
 
-**Full Documentation this : https://nurchulis.docs.apiary.io **
+** Ready use From here : http://api-learning.puspidep.org/ *
 
-**Ready use From here : http://api-learning.puspidep.org/ **
 
 **requirements**
 you must install Flask library in your computer
-http://flask.pocoo.org/docs/1.0/installation/
 
 **use pip install Flask
+
+**use pip install simplejson
+
+**use pip install flask-mysql
 
 **How To Run**
 - Clone this Repo
