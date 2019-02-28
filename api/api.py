@@ -24,6 +24,8 @@ mysql.init_app(app)
 def main_world():
     return render_template('static/index.html')
 
+
+## user sing up
 @app.route('/api/v1/signup',methods=['POST'])
 def signUp():
     # open connection
@@ -59,7 +61,8 @@ def insert(avatar,username,email,password,prodi,verifed):
     conn.commit()
     conn.close()
 
-@app.route('/api/v1/show/<id>')
+## Show user with id_user
+@app.route('/api/v1/user/<id>')
 def show(id):
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -80,7 +83,7 @@ def show(id):
 
 ## For Auth login
 
-
+## Login with username and password
 @app.route('/api/v1/auth', methods=['POST'])
 def auth():
     conn = mysql.connect()
@@ -101,7 +104,7 @@ def auth():
     else:
         return json.dumps({'success':'false'})
 
-
+## Update User where id_user
 @app.route('/api/v1/update/<id>',methods=['POST'])
 def update(id):
     conn = mysql.connect()
@@ -115,6 +118,7 @@ def update(id):
     else:
         return json.dumps({'success':'false'})
 
+## Delete Where Id_user
 @app.route('/delete/<id>')
 def delete(id):
     conn = mysql.connect()
@@ -128,6 +132,7 @@ def delete(id):
         return json.dumps({'success':'false'})
 
 
+## Get Class where id user 
 @app.route('/api/v1/class/<id>')
 def get_class(id):
     conn = mysql.connect()
@@ -151,6 +156,8 @@ def get_class(id):
     else:
         return json.dumps({'data':'null'})
 
+
+## Get all Post in Where id_class
 @app.route('/api/v1/getclass/<id>')
 def get_class_post(id):
     conn = mysql.connect()
@@ -176,7 +183,7 @@ def get_class_post(id):
         return json.dumps({'data':'null'})
 
 
-
+## Insert Posting
 @app.route('/api/v1/post',methods=['POST'])
 def posting():
     # open connection
@@ -209,7 +216,7 @@ def insert_posting(id_class,id_user,caption,category,file):
     conn.commit()
     conn.close()   
 
-
+## Update post where id_posting
 @app.route('/api/v1/update_post/<id>',methods=['POST'])
 def update_post_(id):
     conn = mysql.connect()
@@ -223,6 +230,7 @@ def update_post_(id):
     else:
         return json.dumps({'success':'false'})
 
+## Delete Post where id_post
 @app.route('/api/v1/delete/<id>')
 def delete_post(id):
     conn = mysql.connect()
@@ -235,7 +243,7 @@ def delete_post(id):
     else:
         return json.dumps({'success':'false'})
 
-
+## Join in the Class, insert join in join_class
 @app.route('/api/v1/join',methods=['POST'])
 def join_class_():
     # open connection
@@ -266,6 +274,7 @@ def insert_join(id_user,id_class,rule,accept):
     conn.commit()
     conn.close()   
 
+## Accept join 
 @app.route('/api/v1/accept_join/<id>/<id_class>',methods=['POST'])
 def accept_join(id,id_class):
     conn = mysql.connect()
@@ -276,7 +285,65 @@ def accept_join(id,id_class):
     if(result):
         return json.dumps({'success':'true'})
     else:
+        return json.dumps({'description':'Your already join','success':'false'})
+
+
+
+## Inser Comment with id_posting
+@app.route('/api/v1/comment',methods=['POST'])
+def comment_():
+    # open connection
+    
+    # read request from UI
+    _id_posting = request.form['id_posting']
+    _data   = request.form['data']
+    
+    if _id_posting and _data:
+        insert_comment(_id_posting,_data)
+        return json.dumps({'success':'true', 'data':_data})
+    else:
         return json.dumps({'success':'false'})
+
+def insert_comment(id_posting,data):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        """INSERT INTO Comment (
+                id_posting,
+                data
+            ) 
+            VALUES (%s, %s)""",(id_posting, data))
+    conn.commit()
+    conn.close()   
+
+## Update Comment By id_comment
+@app.route('/api/v1/update_comment/<id>',methods=['POST'])
+def update_comment_(id):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result = cursor.execute("UPDATE Comment SET data = %s WHERE id_comment = %s",
+                            (request.form['data'],int(id)))
+    conn.commit()
+    conn.close()
+    if(result):
+        return json.dumps({'success':'true'})
+    else:
+        return json.dumps({'success':'false'})
+
+
+## Delete Comment where id_comment
+@app.route('/api/v1/delete_comment/<id>')
+def delete_comment_(id):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result = cursor.execute("DELETE FROM Comment WHERE id_comment = %s",int(id))
+    conn.commit()
+    conn.close()
+    if(result):
+        return json.dumps({'success':'true'})
+    else:
+        return json.dumps({'success':'false'})
+
 
 
 
