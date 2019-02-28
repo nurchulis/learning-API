@@ -149,7 +149,7 @@ def delete(id):
 def get_class(id):
     conn = mysql.connect()
     cursor = conn.cursor()
-    result = cursor.execute("SELECT Join_class.rule, Class.id_class, Class.name_class, Class.id_teach, Class.description, Class.prodi, Class.sesi FROM Join_class JOIN User JOIN Class WHERE Join_class.id_user = User.id_user AND Class.id_class = Join_class.id_class AND User.id_user = %s ",int(id))
+    result = cursor.execute("SELECT Class.id_class, Class.id_teach, Class.name_class, Class.description, Class.prodi, Class.semester, Class.sesi FROM Join_class JOIN User JOIN Class WHERE Join_class.id_user = User.id_user AND Class.id_class = Join_class.id_class AND User.id_user = %s ",int(id))
     data = cursor.fetchall()
     results = []
     if(result):
