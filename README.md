@@ -6,6 +6,8 @@ API learning
 
 **Full Documentation this : https://nurchulis.docs.apiary.io **
 
+**Ready use From here : http://api-learning.puspidep.org/ **
+
 **requirements**
 you must install Flask library in your computer
 http://flask.pocoo.org/docs/1.0/installation/
