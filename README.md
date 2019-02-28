@@ -1,6 +1,7 @@
 # learning-API
 API learning
-**JOIN TO this Trello https://trello.com/b/FutPKgCN/api-elearning**
+**JOIN TO this Trello https://trello.com/b/FutPKgCN/api-elearning For See update development**
+
 **How To Run**
 - Clone this Repo
 - Cd /api/
