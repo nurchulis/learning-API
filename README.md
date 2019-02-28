@@ -4,7 +4,7 @@
 API learning
 **JOIN TO this Trello https://trello.com/b/FutPKgCN/api-elearning For See update development**
 
-** Ready use From here : http://api-learning.puspidep.org/ *
+** Ready use here : http://api-learning.puspidep.org/ *
 
 
 **requirements**
