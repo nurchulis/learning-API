@@ -26,8 +26,8 @@ Spesification: Endpoint
 1. **Authentications** :
     - User Login
     - User Register
-    - User Logout*
-    - Forgot Password*
+    - User Logout(not yet)
+    - Forgot Password(not yet)
    
 2. **User **:
     - Get User Mahasiswa
