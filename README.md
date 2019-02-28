@@ -6,6 +6,8 @@ API learning
 - Cd /api/
 - run in terminal **python api.py**
 
+and will start server on 127.0.0.1:5000
+
 : Endpoint
 ----------------
 1. **Authentications** :
