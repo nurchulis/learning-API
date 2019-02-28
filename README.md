@@ -1,5 +1,11 @@
 # learning-API
 API learning
+
+**How To Run**
+- Clone this Repo
+- Cd /api/
+- run in terminal **python api.py**
+
 : Endpoint
 ----------------
 1. **Authentications** :
