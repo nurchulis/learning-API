@@ -4,11 +4,17 @@ API learning
 
 **Full Documentation this : https://nurchulis.docs.apiary.io **
 
+**requirements**
+user must install Flask library in your computer
+http://flask.pocoo.org/docs/1.0/installation/
+
+**use pip install Flask
 
 **How To Run**
 - Clone this Repo
 - Cd /api/
 - run in terminal **python api.py**
+
 
 and will start server on 127.0.0.1:5000
 
