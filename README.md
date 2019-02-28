@@ -13,7 +13,7 @@ API learning
 and will start server on 127.0.0.1:5000
 
 
-: Endpoint
+Spesification: Endpoint
 ----------------
 1. **Authentications** :
     - User Login
