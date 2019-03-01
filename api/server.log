@@ -10,3 +10,122 @@ saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
 /home/nurchulis/Documents/Belajar/API/learning-API/api
 /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
 saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 424, in api_root
+    update_photo(int(id),avatar)
+  File "api.py", line 432, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",avatar,int(id))
+TypeError: execute() takes from 2 to 3 positional arguments but 4 were given
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 424, in api_root
+    update_photo(int(id),foto)
+  File "api.py", line 432, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = 'foto' WHERE id_user = %s",int(id),foto)
+TypeError: execute() takes from 2 to 3 positional arguments but 4 were given
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 424, in api_root
+    update_photo(int(id),foto)
+  File "api.py", line 432, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = 'foto' WHERE id_user = %s",str(avatar),int(id))
+NameError: name 'avatar' is not defined
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 424, in api_root
+    update_photo(int(id),foto)
+  File "api.py", line 432, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = 'foto' WHERE id_user = %s",str(foto),int(id))
+TypeError: execute() takes from 2 to 3 positional arguments but 4 were given
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 424, in api_root
+    update_photo(int(id),foto)
+  File "api.py", line 432, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",str(foto),int(id))
+TypeError: execute() takes from 2 to 3 positional arguments but 4 were given
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg

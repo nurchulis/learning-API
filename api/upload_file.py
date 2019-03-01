@@ -3,6 +3,7 @@ import logging, os
 from werkzeug import secure_filename
 
 app = Flask(__name__)
+
 file_handler = logging.FileHandler('server.log')
 app.logger.addHandler(file_handler)
 app.logger.setLevel(logging.INFO)
@@ -30,7 +31,7 @@ def api_root():
     	app.logger.info("saving {}".format(saved_path))
     	img.save(saved_path)
 
-    	return img_name
+    	return send_from_directory(app.config['UPLOAD_FOLDER'],img_name, as_attachment=True)
     else:
     	return "Where is the image?"
 

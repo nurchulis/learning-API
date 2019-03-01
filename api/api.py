@@ -407,8 +407,8 @@ def create_new_folder(local_dir):
         os.makedirs(newpath)
     return newpath
 
-@app.route('/api/v1/update_foto', methods = ['POST'])
-def api_root():
+@app.route('/api/v1/update_foto/<id>', methods = ['POST'])
+def api_root(id):
     app.logger.info(PROJECT_HOME)
     if request.method == 'POST' and request.files['image']:
         app.logger.info(app.config['UPLOAD_FOLDER'])
@@ -419,9 +419,19 @@ def api_root():
         app.logger.info("saving {}".format(saved_path))
         img.save(saved_path)
 
+        foto=img_name = secure_filename(img.filename)
+
+        update_photo(int(id),foto)
         return send_from_directory(app.config['UPLOAD_FOLDER'],img_name, as_attachment=True)
     else:
         return "Where is the image?"
+
+def update_photo(id,foto):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(foto),int(id)))
+    conn.commit()
+    conn.close()
 
 
 
