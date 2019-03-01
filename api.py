@@ -25,6 +25,7 @@ def main_world():
      return "Hello World!"
 
 
+
 ## user sing up
 @app.route('/api/v1/signup',methods=['POST'])
 def signUp():
@@ -41,10 +42,20 @@ def signUp():
     _hash_pass = generate_password_hash(_pass)
 
     if _ava and _user and _email and _pass and _prodi and _ver:
-        insert(_ava,_user,_email, _pass,_prodi,_ver)
-        return json.dumps({'html':'<span>Data Inserted </span>'})
+    
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        result=cursor.execute("SELECT * from User where email = %s OR username = %s", (requests['email'], requests['username']))
+        data = cursor.fetchall()
+
+        if(result):
+            return json.dumps({'success':'false','data':'Username or email already'})
+        else:
+            insert(_ava,_user,_email, _pass,_prodi,_ver)
+            return json.dumps({'html':'<span>Data Inserted </span>'})
     else:
-        return json.dumps({'html':'<span>Enter the required fields</span>'})
+        return json.dumps({'html':'<span>Enter the required fields</span>'})        
+    
 
 def insert(avatar,username,email,password,prodi,verifed):
     conn = mysql.connect()
