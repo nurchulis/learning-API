@@ -5,6 +5,7 @@ from flask import render_template
 from flask import request
 from flask import json
 import simplejson
+import logging.config
 from werkzeug.security import generate_password_hash, check_password_hash
 from flaskext.mysql import MySQL
 
@@ -13,6 +14,7 @@ template_path = os.path.join(project_root)
 
 mysql = MySQL()
 app = Flask(__name__,template_folder=template_path)
+file_handler = logging.FileHandler('server.log')
 # mysql configuratoin
 app.config['MYSQL_DATABASE_HOST']       = 'localhost'
 app.config['MYSQL_DATABASE_USER']       = 'puspidep_chulis'
