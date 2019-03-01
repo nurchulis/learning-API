@@ -138,3 +138,234 @@ saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/WhatsApp_I
 /home/nurchulis/Documents/Belajar/API/learning-API/api
 /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
 saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/class/1 [GET]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 583, in connect
+    **kwargs)
+  File "/home/nurchulis/anaconda3/lib/python3.6/socket.py", line 724, in create_connection
+    raise err
+  File "/home/nurchulis/anaconda3/lib/python3.6/socket.py", line 713, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 173, in get_class
+    conn = mysql.connect()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flaskext/mysql.py", line 53, in connect
+    return pymysql.connect(**self.connect_args)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+Exception on /api/v1/upload [GET]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+Exception on /api/v1/upload [GET]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 422, in api_root
+    unik=img.filename("s")
+TypeError: 'str' object is not callable
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 422, in api_root
+    unik=+str("s")+img.filename
+TypeError: bad operand type for unary +: 'str'
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/pp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/giphy-downsized-small.mp4
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/giphy-downsized-small.mp4
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 426, in api_root
+    update_photo(int(id),foto)
+NameError: name 'foto' is not defined
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/blank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/sblank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/sblank-page.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/serwin-setiadi-84165563-5ba70ca357b6d8.jpg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 429, in api_root
+    print(randomString(8))
+NameError: name 'randomString' is not defined
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/spp.jpeg
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/islryohjnevwxmfzgpkbpp.jpeg

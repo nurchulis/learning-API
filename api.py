@@ -1,4 +1,6 @@
 import os,logging
+import random
+import string
 from pprint import pprint
 from flask import Flask, url_for, send_from_directory
 from flask import render_template
@@ -399,7 +401,7 @@ def delete_comment_(id):
         return json.dumps({'success':'true'})
     else:
         return json.dumps({'success':'false'})
-
+        
 ## Upload photo profile
 def create_new_folder(local_dir):
     newpath = local_dir
@@ -413,26 +415,35 @@ def api_root(id):
     if request.method == 'POST' and request.files['image']:
         app.logger.info(app.config['UPLOAD_FOLDER'])
         img = request.files['image']
+        ##unique name file
         img_name = secure_filename(img.filename)
+        uniqe_name=randomString(20)+img_name
+        ##
         create_new_folder(app.config['UPLOAD_FOLDER'])
-        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name)
+        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], uniqe_name)
         app.logger.info("saving {}".format(saved_path))
         img.save(saved_path)
 
         foto=img_name = secure_filename(img.filename)
-
-        update_photo(int(id),foto)
-        return send_from_directory(app.config['UPLOAD_FOLDER'],img_name, as_attachment=True)
+        uniqe_name_data=randomString(20)+foto
+        print(randomString(20))
+        update_photo(int(id),uniqe_name_data)
+        return send_from_directory(app.config['UPLOAD_FOLDER'],uniqe_name, as_attachment=True)
+        
     else:
         return "Where is the image?"
 
-def update_photo(id,foto):
+def update_photo(id,uniqe_name_data):
     conn = mysql.connect()
     cursor = conn.cursor()
-    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(foto),int(id)))
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(uniqe_name_data),int(id)))
     conn.commit()
     conn.close()
 
+def randomString(stringLength=20):
+    """Generate a random string of fixed length """
+    letters= string.ascii_lowercase
+    return ''.join(random.sample(letters,stringLength))
 
         
 if __name__ == '__main__':
