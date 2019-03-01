@@ -22,7 +22,7 @@ mysql.init_app(app)
 
 @app.route('/')
 def main_world():
-     return "Hello World!"
+    return render_template('static/index.html')
 
 
 
