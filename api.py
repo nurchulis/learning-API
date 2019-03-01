@@ -16,7 +16,7 @@ template_path = os.path.join(project_root)
 mysql = MySQL()
 app = Flask(__name__,template_folder=template_path)
 ##upload file function
-file_handler = logging.FileHandler('static/server.log')
+file_handler = logging.FileHandler('uploads/server.log')
 app.logger.addHandler(file_handler)
 app.logger.setLevel(logging.INFO)
 
