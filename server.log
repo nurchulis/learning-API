@@ -199,3 +199,6 @@ Traceback (most recent call last):
   File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.OperationalError: (1045, "Access denied for user 'puspidep_chulis'@'localhost' (using password: YES)")
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/WhatsApp_Image_2018-12-19_at_21.45.42.jpeg
