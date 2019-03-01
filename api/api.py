@@ -1,18 +1,31 @@
-import os
+import os,logging
 from pprint import pprint
-from flask import Flask
+from flask import Flask, url_for, send_from_directory
 from flask import render_template
 from flask import request
 from flask import json
 import simplejson
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug import secure_filename
 from flaskext.mysql import MySQL
+
 
 project_root = os.path.dirname(__name__)
 template_path = os.path.join(project_root)
 
 mysql = MySQL()
 app = Flask(__name__,template_folder=template_path)
+
+##upload file function
+file_handler = logging.FileHandler('server.log')
+app.logger.addHandler(file_handler)
+app.logger.setLevel(logging.INFO)
+
+PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
+UPLOAD_FOLDER = '{}/uploads/'.format(PROJECT_HOME)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+##
+
 # mysql configuratoin
 app.config['MYSQL_DATABASE_HOST']       = 'localhost'
 app.config['MYSQL_DATABASE_USER']       = 'root'
@@ -387,6 +400,28 @@ def delete_comment_(id):
     else:
         return json.dumps({'success':'false'})
 
+## Upload photo profile
+def create_new_folder(local_dir):
+    newpath = local_dir
+    if not os.path.exists(newpath):
+        os.makedirs(newpath)
+    return newpath
+
+@app.route('/api/v1/update_foto', methods = ['POST'])
+def api_root():
+    app.logger.info(PROJECT_HOME)
+    if request.method == 'POST' and request.files['image']:
+        app.logger.info(app.config['UPLOAD_FOLDER'])
+        img = request.files['image']
+        img_name = secure_filename(img.filename)
+        create_new_folder(app.config['UPLOAD_FOLDER'])
+        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name)
+        app.logger.info("saving {}".format(saved_path))
+        img.save(saved_path)
+
+        return send_from_directory(app.config['UPLOAD_FOLDER'],img_name, as_attachment=True)
+    else:
+        return "Where is the image?"
 
 
 
