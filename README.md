@@ -31,11 +31,13 @@ Spesification: Endpoint
 1. **Authentications** :
     - User Login
     - User Register
+    - Verifi Account
     - User Logout(not yet)
     - Forgot Password(not yet)
    
 2. **User**
-    - Get User Mahasiswa
+    - User Activation
+    - Get User
     - Update User Profile
     - Update photo Profile
 
