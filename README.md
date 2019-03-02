@@ -39,7 +39,7 @@ Spesification: Endpoint
     - Update User Profile
     - Update photo Profile
 
-3. **Class**
+3. **Class**:
     - Get All Class
     - Get Class
     - Get Post Class
