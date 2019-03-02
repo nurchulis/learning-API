@@ -34,7 +34,7 @@ Spesification: Endpoint
     - User Logout(not yet)
     - Forgot Password(not yet)
    
-2. **User **:
+2. **User**
     - Get User Mahasiswa
     - Update User Profile
     - Update photo Profile
