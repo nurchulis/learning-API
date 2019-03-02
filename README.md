@@ -60,5 +60,6 @@ Spesification: Endpoint
 - How to make unique name file flask
 - How to make unique name file flask api
 - How to upload file with file save in database
+- How to create email verification with api flask
 
 
