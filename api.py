@@ -6,6 +6,7 @@ from flask import Flask, url_for, send_from_directory
 from flask import render_template
 from flask import request
 from flask import json
+from flask_mail import Mail, Message
 import simplejson
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug import secure_filename
@@ -17,8 +18,9 @@ template_path = os.path.join(project_root)
 
 mysql = MySQL()
 app = Flask(__name__,template_folder=template_path)
+mail=Mail(app)
 ##upload file function
-file_handler = logging.FileHandler('uploads/server.log')
+file_handler = logging.FileHandler('server.log')
 app.logger.addHandler(file_handler)
 app.logger.setLevel(logging.INFO)
 
@@ -34,10 +36,19 @@ app.config['MYSQL_DATABASE_PASSWORD']   = 'lina@maulana'
 app.config['MYSQL_DATABASE_DB']         = 'puspidep_learning'
 mysql.init_app(app)
 
+
+app.config['MAIL_SERVER']='api-learning.puspidep.org'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'nurchulis@api-learning.puspidep.org'
+app.config['MAIL_PASSWORD'] = 'lina@maulana11'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
+
+
 @app.route('/')
 def main_world():
     return render_template('static/index.html')
-
 
 
 ## user sing up
@@ -401,7 +412,7 @@ def delete_comment_(id):
         return json.dumps({'success':'true'})
     else:
         return json.dumps({'success':'false'})
-        
+
 ## Upload photo profile
 def create_new_folder(local_dir):
     newpath = local_dir
@@ -417,7 +428,6 @@ def api_root(id):
         img = request.files['image']
         ##unique name file
         img_name = secure_filename(img.filename)
-        ##combine random string and name file
         uniqe_name=randomString(20)+img_name
         ##
         create_new_folder(app.config['UPLOAD_FOLDER'])
@@ -426,10 +436,8 @@ def api_root(id):
         img.save(saved_path)
 
         foto=img_name = secure_filename(img.filename)
-        ##combine random string and name file
         uniqe_name_data=randomString(20)+foto
         print(randomString(20))
-
         update_photo(int(id),uniqe_name_data)
         return send_from_directory(app.config['UPLOAD_FOLDER'],uniqe_name, as_attachment=True)
         
@@ -448,8 +456,58 @@ def randomString(stringLength=20):
     letters= string.ascii_lowercase
     return ''.join(random.sample(letters,stringLength))
 
-        
+
+@app.route("/api/v1/email/<email>/<id_user>")
+def send_email(email,id_user):
+   name_email=[str(email)] 
+   
+   code_activation = random.randint(1,10000)
+   set_activation(code_activation,id_user)
+
+   msg = Message('Code Aktivasi learning', sender = 'nurchulis@api-learning.puspidep.org', recipients = name_email)
+   msg.body = "Hai ini Code aktivasi mu : "+str(code_activation)
+   
+   
+   mail.send(msg)
+   print(code_activation)
+   return json.dumps({'success':'true'})
+
+def set_activation(code_activation,id_user): 
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        """INSERT INTO activation (
+                id_user,
+                code_activation
+            ) 
+            VALUES (%s, %s)""",(int(id_user),str(code_activation)))
+    conn.commit()
+    conn.close()   
+
+@app.route("/api/v1/verif/<id_user>/<code_activation>")
+def verif_account(id_user,code_activation):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result=cursor.execute("SELECT * from activation WHERE id_user = %s AND code_activation = %s ", (int(id_user), str(code_activation)))
+    data = cursor.fetchall()
+
+    if(result):
+        update_verifed(id_user)
+        return json.dumps({'success':'true'})
+    else:
+        return json.dumps({'say':'invalid code','success':'false'})
+    
+    conn.commit()
+    conn.close()   
+
+def update_verifed(id_user):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result = cursor.execute("UPDATE User SET verifed = 1 WHERE id_user = %s",id_user)
+    conn.commit()
+    conn.close()
+    
+
+
 if __name__ == '__main__':
-    import logging
-    logging.basicConfig(filename='error.log',level=logging.DEBUG)
     app.run()
