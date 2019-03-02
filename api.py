@@ -417,6 +417,7 @@ def api_root(id):
         img = request.files['image']
         ##unique name file
         img_name = secure_filename(img.filename)
+        ##combine random string and name file
         uniqe_name=randomString(20)+img_name
         ##
         create_new_folder(app.config['UPLOAD_FOLDER'])
@@ -425,8 +426,10 @@ def api_root(id):
         img.save(saved_path)
 
         foto=img_name = secure_filename(img.filename)
+        ##combine random string and name file
         uniqe_name_data=randomString(20)+foto
         print(randomString(20))
+
         update_photo(int(id),uniqe_name_data)
         return send_from_directory(app.config['UPLOAD_FOLDER'],uniqe_name, as_attachment=True)
         
@@ -447,4 +450,6 @@ def randomString(stringLength=20):
 
         
 if __name__ == '__main__':
+    import logging
+    logging.basicConfig(filename='error.log',level=logging.DEBUG)
     app.run()
