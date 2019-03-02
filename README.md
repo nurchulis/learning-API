@@ -52,3 +52,11 @@ Spesification: Endpoint
     - Delete Comment
     - Edit Comment
     
+
++ fit
+How to make api learning
+How to make unique name file flask
+How to make unique name file flask api
+How to upload file with file save in database
+
+
