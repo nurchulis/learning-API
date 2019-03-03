@@ -497,7 +497,7 @@ def api_root(id):
         uniqe_name_data=randomString(20)+img_name
         ##
         create_new_folder(app.config['UPLOAD_FOLDER'])
-        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], uniqe_name)
+        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], uniqe_name_data)
         app.logger.info("saving {}".format(saved_path))
         img.save(saved_path)
           
