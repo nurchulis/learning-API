@@ -566,3 +566,69 @@ Traceback (most recent call last):
   File "/home/puspidep/learning-API/api.py", line 313, in join_class_
     _rule   = requests['rule']
 KeyError: 'rule'
+Exception on /api/v1/get_comment/1 [GET]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 450, in get_comment
+    conn = mysql.connect()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flaskext/mysql.py", line 53, in connect
+    return pymysql.connect(**self.connect_args)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'puspidep_chulis'@'localhost' (using password: YES)")
+Exception on /api/v1/get_comment/1 [GET]
+Traceback (most recent call last):
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "api.py", line 450, in get_comment
+    conn = mysql.connect()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/flaskext/mysql.py", line 53, in connect
+    return pymysql.connect(**self.connect_args)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'puspidep_chulis'@'localhost' (using password: YES)")

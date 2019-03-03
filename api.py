@@ -444,6 +444,28 @@ def update_comment_(id):
         return json.dumps({'success':'false'})
 
 
+## Get Class where id user 
+@app.route('/api/v1/get_comment/<id_posting>')
+def get_comment(id_posting):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result = cursor.execute("SELECT * FROM Comment Where id_posting = %s ",int(id_posting))
+    data = cursor.fetchall()
+    results = []
+    if(result):
+        for item in data:
+            dataResponse = {
+                'id_comment'     : item[0],
+                'id_posting'     : item[1],
+                'data'   : item[2],
+            }
+            results.append(dataResponse)
+        return json.dumps(results)
+    else:
+        return json.dumps({'data':'null'})
+
+
+
 ## Delete Comment where id_comment
 @app.route('/api/v1/delete_comment/<id>')
 def delete_comment_(id):
