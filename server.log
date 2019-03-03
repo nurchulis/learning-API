@@ -202,3 +202,367 @@ pymysql.err.OperationalError: (1045, "Access denied for user 'puspidep_chulis'@'
 /home/puspidep/learning-API
 /home/puspidep/learning-API/uploads/
 saving /home/puspidep/learning-API/uploads/WhatsApp_Image_2018-12-19_at_21.45.42.jpeg
+Exception on /api/v1/email/nura3609@gmail.com/2 [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 465, in send_email
+    set_activation(code_activation,id_user)
+  File "/home/puspidep/learning-API/api.py", line 483, in set_activation
+    VALUES (%s, %s)""",(int(id_user),str(code_activation)))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'puspidep_learning.activation' doesn't exist")
+Exception on /api/v1/email/latifahlina@gmail.com/2 [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 465, in send_email
+    set_activation(code_activation,id_user)
+  File "/home/puspidep/learning-API/api.py", line 483, in set_activation
+    VALUES (%s, %s)""",(int(id_user),str(code_activation)))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'puspidep_learning.activation' doesn't exist")
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/maqjiuvprosblyxhgfewpp.jpeg
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/vznraodmkyplfxtgsbwepp.jpeg
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/vibkqoahgunystpwxdrcpp.jpeg
+Exception on /api/v1/verif/nura3609@gmail.com/1 [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 491, in verif_account
+    result=cursor.execute("SELECT * from activation WHERE id_user = %s AND code_activation = %s ", (int(id_user), str(code_activation)))
+ValueError: invalid literal for int() with base 10: 'nura3609@gmail.com'
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in signUp
+    _ava   = requests['avatar']
+KeyError: 'avatar'
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in signUp
+    _ava   = requests['avatar']
+KeyError: 'avatar'
+Exception on /api/v1/email/(email)/(id_user) [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 465, in send_email
+    set_activation(code_activation,id_user)
+  File "/home/puspidep/learning-API/api.py", line 483, in set_activation
+    VALUES (%s, %s)""",(int(id_user),str(code_activation)))
+ValueError: invalid literal for int() with base 10: '(id_user)'
+Exception on /api/v1/email/(email)/(id_user) [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 465, in send_email
+    set_activation(code_activation,id_user)
+  File "/home/puspidep/learning-API/api.py", line 483, in set_activation
+    VALUES (%s, %s)""",(int(id_user),str(code_activation)))
+ValueError: invalid literal for int() with base 10: '(id_user)'
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/hpiymknocwslagrfjuzqpp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 441, in api_root
+    update_photo(int(id),uniqe_name_data)
+  File "/home/puspidep/learning-API/api.py", line 450, in update_photo
+    url=str('http://puspidep.org/image_file/uploads/')+uniqie_name_data
+NameError: name 'uniqie_name_data' is not defined
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/ctoewlypuxqgsmzharbdpp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 441, in api_root
+    update_photo(int(id),uniqe_name_data)
+  File "/home/puspidep/learning-API/api.py", line 450, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(unique_name_data),int(id)))
+NameError: name 'unique_name_data' is not defined
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/yusmaltfdoqeprkcibxjpp.jpeg
+Exception on /api/v1/update_foto/1 [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 441, in api_root
+    update_photo(int(id),uniqe_name_data)
+  File "/home/puspidep/learning-API/api.py", line 450, in update_photo
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(unique_name_data),int(id)))
+NameError: name 'unique_name_data' is not defined
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/axbtempzjucgnkldrvsqpp.jpeg
+Exception on /api/v1/update/1 [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 161, in update
+    (requests['avatar'],requests['username'],requests['email'],requests['password'],requests['prodi'],requests['verifed'],int(id)))
+TypeError: list indices must be integers or slices, not str
+/home/puspidep/learning-API
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/nqvhjetcgpuxzmylwadipp.jpeg
+/home/puspidep/learning-API
+/home/puspidep/learning-API/uploads/
+saving /home/puspidep/learning-API/uploads/aksniftxuoqgchvdjyzbphoto_2.jpg
+Exception on /api/v1/post [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 37, in _scan_once
+    nextchar = string[idx]
+IndexError: string index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/puspidep/learning-API/api.py", line 238, in posting
+    requests = json.loads(request.data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/json/__init__.py", line 205, in loads
+    return _json.loads(s, **kwargs)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/__init__.py", line 535, in loads
+    return cls(encoding=encoding, **kw).decode(s)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 79, in scan_once
+    return _scan_once(string, idx)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 39, in _scan_once
+    raise JSONDecodeError(errmsg, string, idx)
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 240, in posting
+    abort(400)
+NameError: name 'abort' is not defined
+Exception on /api/v1/post [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 37, in _scan_once
+    nextchar = string[idx]
+IndexError: string index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/puspidep/learning-API/api.py", line 238, in posting
+    requests = json.loads(request.data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/json/__init__.py", line 205, in loads
+    return _json.loads(s, **kwargs)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/__init__.py", line 535, in loads
+    return cls(encoding=encoding, **kw).decode(s)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 79, in scan_once
+    return _scan_once(string, idx)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 39, in _scan_once
+    raise JSONDecodeError(errmsg, string, idx)
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 240, in posting
+    abort(400)
+NameError: name 'abort' is not defined
+Exception on /api/v1/join [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 313, in join_class_
+    _rule   = requests['rule']
+KeyError: 'rule'
