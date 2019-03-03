@@ -494,7 +494,7 @@ def api_root(id):
         img = request.files['image']
         ##unique name file
         img_name = secure_filename(img.filename)
-        uniqe_name=randomString(20)+img_name
+        uniqe_name_data=randomString(20)+img_name
         ##
         create_new_folder(app.config['UPLOAD_FOLDER'])
         saved_path = os.path.join(app.config['UPLOAD_FOLDER'], uniqe_name_data)
