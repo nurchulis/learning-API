@@ -180,6 +180,47 @@ def delete(id):
         return json.dumps({'success':'false'})
 
 
+
+## user create class
+@app.route('/api/v1/create_class',methods=['POST'])
+def addClass():
+     
+    requests = json.loads(request.data)
+    
+
+    _id_teach   = requests['id_teach']
+    _name_class  = requests['name_class']
+    _description   = requests['description']
+    _prodi   = requests['prodi']
+    _semester   = requests['semester']
+    _sesi   = requests['sesi']
+    
+    if _id_teach and _name_class and _description and _prodi and _semester and _sesi:
+
+         
+         insert_class(_id_teach, _name_class, _description, _prodi, _semester, _sesi)      
+         return json.dumps({'success':'true','data':'insert'}) 
+    else:
+        return json.dumps({'html':'<span>Enter the required fields</span>'})        
+    
+
+def insert_class(id_teach,name_class,description,prodi,semester,sesi):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(
+        """INSERT INTO Class (
+                id_teach,
+                name_class,
+                description,
+                prodi,
+                semester,
+                sesi
+            ) 
+            VALUES (%s,%s,%s,%s,%s,%s)""",(id_teach,name_class,description,prodi,semester,sesi))
+    conn.commit()
+    conn.close()
+
+
 ## Get Class where id user 
 @app.route('/api/v1/class/<id>')
 def get_class(id):
