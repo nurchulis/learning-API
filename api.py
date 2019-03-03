@@ -513,7 +513,9 @@ def api_root(id):
 def update_photo(id,uniqe_name_data):
     conn = mysql.connect()
     cursor = conn.cursor()
-    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(uniqe_name_data),int(id)))
+    url_photo = 'http://puspidep.org/image_file/uploads/'
+    set_name = url_photo+uniqe_name_data
+    result = cursor.execute("UPDATE User SET avatar = %s WHERE id_user = %s",(str(set_name),int(id)))
     conn.commit()
     conn.close()
 

@@ -659,3 +659,6 @@ Traceback (most recent call last):
   File "/home/nurchulis/anaconda3/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
 pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int(1) WHERE id_user = 1' at line 1")
+/home/nurchulis/Documents/Belajar/API/learning-API/api
+/home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/
+saving /home/nurchulis/Documents/Belajar/API/learning-API/api/uploads/mcibfnlwytdkxrupeqzspp.jpeg
