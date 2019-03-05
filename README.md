@@ -6,8 +6,6 @@ API learning
 
 ** Ready use here : http://api-learning.puspidep.org/ *
 
-** file phots access in here : http://puspidep.org/image_file/uploads/  **
-
 **requirements**
 you must install Flask library in your computer
 
