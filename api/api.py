@@ -9,7 +9,7 @@ from flask import json
 from flask_mail import Mail, Message
 import simplejson
 from werkzeug.security import generate_password_hash, check_password_hash
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 from flaskext.mysql import MySQL
 
 
@@ -26,8 +26,10 @@ app.logger.setLevel(logging.INFO)
 
 PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
 UPLOAD_FOLDER = '{}/uploads/'.format(PROJECT_HOME)
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ##
+
 
 # mysql configuratoin
 app.config['MYSQL_DATABASE_HOST']       = 'localhost'
@@ -35,7 +37,6 @@ app.config['MYSQL_DATABASE_USER']       = 'root'
 app.config['MYSQL_DATABASE_PASSWORD']   = 'root'
 app.config['MYSQL_DATABASE_DB']         = 'learning'
 mysql.init_app(app)
-
 
 app.config['MAIL_SERVER']='api-learning.puspidep.org'
 app.config['MAIL_PORT'] = 465
@@ -197,7 +198,7 @@ def addClass():
     
     if _id_teach and _name_class and _description and _prodi and _semester and _sesi:
 
-
+         
          insert_class(_id_teach, _name_class, _description, _prodi, _semester, _sesi)      
          return json.dumps({'success':'true','data':'insert'}) 
     else:
@@ -219,6 +220,9 @@ def insert_class(id_teach,name_class,description,prodi,semester,sesi):
             VALUES (%s,%s,%s,%s,%s,%s)""",(id_teach,name_class,description,prodi,semester,sesi))
     conn.commit()
     conn.close()
+
+
+
 
 
 ## Get Class where id user 
@@ -440,6 +444,7 @@ def update_comment_(id):
     else:
         return json.dumps({'success':'false'})
 
+
 ## Get Class where id user 
 @app.route('/api/v1/get_comment/<id_posting>')
 def get_comment(id_posting):
@@ -459,6 +464,7 @@ def get_comment(id_posting):
         return json.dumps(results)
     else:
         return json.dumps({'data':'null'})
+
 
 
 ## Delete Comment where id_comment
@@ -481,32 +487,36 @@ def create_new_folder(local_dir):
         os.makedirs(newpath)
     return newpath
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
 @app.route('/api/v1/update_foto/<id>', methods = ['POST'])
 def api_root(id):
     app.logger.info(PROJECT_HOME)
-    if request.method == 'POST' and request.files['image']:
+    file = request.files['image']
+    if request.method == 'POST' and request.files['image'] and allowed_file(file.filename):
+
         app.logger.info(app.config['UPLOAD_FOLDER'])
         img = request.files['image']
         ##unique name file
         img_name = secure_filename(img.filename)
-        uniqe_name=randomString(20)+img_name
+        uniqe_name_data=randomString(20)+img_name
         ##
         create_new_folder(app.config['UPLOAD_FOLDER'])
-        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], uniqe_name)
+        saved_path = os.path.join(app.config['UPLOAD_FOLDER'], uniqe_name_data)
         app.logger.info("saving {}".format(saved_path))
         img.save(saved_path)
-
-        foto=img_name = secure_filename(img.filename)
-        uniqe_name_data=randomString(20)+foto
-        print(randomString(20))
+          
         update_photo(int(id),uniqe_name_data)
-        return send_from_directory(app.config['UPLOAD_FOLDER'],uniqe_name, as_attachment=True)
+        return send_from_directory(app.config['UPLOAD_FOLDER'],uniqe_name_data, as_attachment=True)
         
     else:
-        return "Where is the image?"
+        return "Form Extension OR you not inser the image"
 
 def update_photo(id,uniqe_name_data):
-    conn = mysql.connect()
+    conn = mysql.connect()  
     cursor = conn.cursor()
     url_photo = 'http://puspidep.org/image_file/uploads/'
     set_name = url_photo+uniqe_name_data

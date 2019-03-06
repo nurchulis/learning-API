@@ -9,7 +9,7 @@ from flask import json
 from flask_mail import Mail, Message
 import simplejson
 from werkzeug.security import generate_password_hash, check_password_hash
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 from flaskext.mysql import MySQL
 
 
@@ -26,6 +26,7 @@ app.logger.setLevel(logging.INFO)
 
 PROJECT_HOME = os.path.dirname(os.path.realpath(__file__))
 UPLOAD_FOLDER = '{}/uploads/'.format(PROJECT_HOME)
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ##
 
@@ -486,10 +487,18 @@ def create_new_folder(local_dir):
         os.makedirs(newpath)
     return newpath
 
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
 @app.route('/api/v1/update_foto/<id>', methods = ['POST'])
 def api_root(id):
     app.logger.info(PROJECT_HOME)
-    if request.method == 'POST' and request.files['image']:
+    file = request.files['image']
+    if request.method == 'POST' and request.files['image'] and allowed_file(file.filename):
+
         app.logger.info(app.config['UPLOAD_FOLDER'])
         img = request.files['image']
         ##unique name file
@@ -505,10 +514,11 @@ def api_root(id):
         return send_from_directory(app.config['UPLOAD_FOLDER'],uniqe_name_data, as_attachment=True)
         
     else:
-        return "Where is the image?"
+        return "Form Extension OR you not inser the image"
+
 
 def update_photo(id,uniqe_name_data):
-    conn = mysql.connect()
+    conn = mysql.connect()  
     cursor = conn.cursor()
     url_photo = 'http://puspidep.org/image_file/uploads/'
     set_name = url_photo+uniqe_name_data
