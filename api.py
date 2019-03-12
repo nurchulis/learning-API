@@ -110,6 +110,7 @@ def show(id):
     if data is not None:
         for item in data:
             dataResponse = {
+                'success'     : 'true',
                 'id_user'     : item[0],
                 'avatar'      : item[1],
                 'username'    : item[2],

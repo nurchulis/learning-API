@@ -276,6 +276,35 @@ def get_class_post(id):
         return json.dumps({'data':'null'})
 
 
+## Get all Post in Where id_class
+@app.route('/api/v1/highlightclass')
+def get_class_hightlight():
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    result = cursor.execute("SELECT Posting.id_posting, Posting.id_class, Posting.id_user, Posting.caption, Posting.category, Posting.file, Posting.time, Class.name_class, User.username, User.id_user FROM Posting Join Class ON Class.id_class = Posting.id_class Join User ON Posting.id_user = User.id_user")
+    data = cursor.fetchall()
+
+    results = []
+    if (result):
+        for item in data:
+            dataResponse = {
+            'id_posting' : item[0],
+            'id_class'   : item[1],
+            'id_user'    : item[2],
+            'caption'    : item[3],
+            'category'   : item[4],
+            'file'       : item[5],
+            'time'       : item[6],
+            'name_class' : item[7],
+            'username'   : item[8]
+            }
+            results.append(dataResponse)
+        return json.dumps(results)
+    else:
+        return json.dumps({'data':'null'})
+
+
+
 ## Insert Posting
 @app.route('/api/v1/post',methods=['POST'])
 def posting():
