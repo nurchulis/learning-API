@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 28, 2019 at 11:41 AM
+-- Generation Time: Mar 15, 2019 at 11:53 PM
 -- Server version: 5.7.21-1
 -- PHP Version: 7.0.29-1+b1
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `learning`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activation`
+--
+
+CREATE TABLE `activation` (
+  `id_activation` int(5) NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `code_activation` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `activation`
+--
+
+INSERT INTO `activation` (`id_activation`, `id_user`, `code_activation`) VALUES
+(1, 1, '6518'),
+(2, 1, '9609'),
+(3, 1, '2678');
 
 -- --------------------------------------------------------
 
@@ -91,8 +112,7 @@ INSERT INTO `Join_class` (`id_join`, `id_user`, `id_class`, `rule`, `accept`) VA
 (3, 3, 1, 0, 0),
 (4, 1, 2, 0, 1),
 (7, 6, 1, 1, 1),
-(8, 6, 2, 1, 1),
-(9, 1, 1, 0, 0);
+(8, 6, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -135,7 +155,7 @@ CREATE TABLE `User` (
   `email` varchar(50) NOT NULL,
   `password` varchar(25) NOT NULL,
   `prodi` varchar(50) NOT NULL,
-  `verifed` tinyint(1) NOT NULL
+  `verifed` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 --
@@ -143,7 +163,7 @@ CREATE TABLE `User` (
 --
 
 INSERT INTO `User` (`id_user`, `avatar`, `username`, `email`, `password`, `prodi`, `verifed`) VALUES
-(1, 'user1.png', 'nurchuliss', 'nura3609@gmail.com', '12345', 'Teknik Informatika', 0),
+(1, 'http://puspidep.org/image_file/uploads/bikcxhyfjuptonrewazdpp.jpeg', 'nurchulis', 'nura3609@gmail.com', '12345', 'Teknik Informatika', 1),
 (2, 'user2.png', 'Latifah Lina nurhidayah', 'latifahlina@gmail.com', '12345', 'Biologi', 1),
 (3, 'user3.png', 'Siska Dewi S', 'siskadewis@gmail.com', '12345', 'Matematika', 1),
 (4, 'user4.png', 'Bayu', 'bayuirfan@gmail.com', '12345', 'Teknik Informatika', 1),
@@ -151,11 +171,19 @@ INSERT INTO `User` (`id_user`, `avatar`, `username`, `email`, `password`, `prodi
 (6, 'user6.png', 'Bambang', 'bambanginfo@gmail.com', '12345', 'Teknik Informatika', 1),
 (7, 'user.png', 'nurchulis', 'nura360@gmail.com', '12345', 'Teknik informatika', 0),
 (8, 'user.png', 'nurchulis', 'nura360@gmail.com', '12345', 'Teknik informatika', 0),
-(9, 'user1.png', 'aku', 'nura3609@gmail.com', '12345', 'Teknik Informatika', 0);
+(9, 'user1.png', 'aku', 'nura3609@gmail.com', '12345', 'Teknik Informatika', 0),
+(10, 'user1.png', 'juang', 'nura3609@gmail.com', '12345', 'Teknik Informatika', 0),
+(11, 'user1.png', 'nurchuliss', 'nura3609@gmail.com', '12345', 'Teknik Informatika', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activation`
+--
+ALTER TABLE `activation`
+  ADD PRIMARY KEY (`id_activation`);
 
 --
 -- Indexes for table `Class`
@@ -192,6 +220,11 @@ ALTER TABLE `User`
 --
 
 --
+-- AUTO_INCREMENT for table `activation`
+--
+ALTER TABLE `activation`
+  MODIFY `id_activation` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `Class`
 --
 ALTER TABLE `Class`
@@ -205,7 +238,7 @@ ALTER TABLE `Comment`
 -- AUTO_INCREMENT for table `Join_class`
 --
 ALTER TABLE `Join_class`
-  MODIFY `id_join` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_join` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `Posting`
 --
@@ -215,7 +248,7 @@ ALTER TABLE `Posting`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
