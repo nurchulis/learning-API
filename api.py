@@ -140,7 +140,7 @@ def auth():
             dataResponse = {
                 'success'     : 'true',
                 'id_user'     : item[0],
-                'username'    : _username
+                'username'    : requests['username']
             }
  
         return json.dumps(dataResponse)
