@@ -125,12 +125,14 @@ def show(id):
 ## Login with username and password
 @app.route('/api/v1/auth', methods=['POST'])
 def auth(): 
-    _username   = request.form['username']
-    _password   = request.form['password']
+    try:
+        requests = json.loads(request.data)
+    except ValueError as e:
+        abort(400)
 
     conn = mysql.connect()
     cursor = conn.cursor()
-    result=cursor.execute("SELECT * FROM User WHERE username = %s and password = %s",(_username, _password))
+    result=cursor.execute("SELECT * FROM User WHERE username = %s and password = %s",(requests['username'], requests['password']))
     data = cursor.fetchall()
     
     if(result):
