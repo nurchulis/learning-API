@@ -33,7 +33,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # mysql configuratoin
 app.config['MYSQL_DATABASE_HOST']       = 'localhost'
 app.config['MYSQL_DATABASE_USER']       = 'puspidep_chulis'
-app.config['MYSQL_DATABASE_PASSWORD']   = 'secret'
+app.config['MYSQL_DATABASE_PASSWORD']   = 'lina@maulana'
 app.config['MYSQL_DATABASE_DB']         = 'puspidep_learning'
 mysql.init_app(app)
 
@@ -41,7 +41,7 @@ mysql.init_app(app)
 app.config['MAIL_SERVER']='api-learning.puspidep.org'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'nurchulis@api-learning.puspidep.org'
-app.config['MAIL_PASSWORD'] = 'secret'
+app.config['MAIL_PASSWORD'] = 'lina@maulana11'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
