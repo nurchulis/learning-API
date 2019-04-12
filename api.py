@@ -11,6 +11,8 @@ import simplejson
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from flaskext.mysql import MySQL
+from twilio.rest import Client
+from flask_cors import CORS
 
 
 project_root = os.path.dirname(__name__)
@@ -19,6 +21,7 @@ template_path = os.path.join(project_root)
 mysql = MySQL()
 app = Flask(__name__,template_folder=template_path)
 mail=Mail(app)
+CORS(app)
 ##upload file function
 file_handler = logging.FileHandler('server.log')
 app.logger.addHandler(file_handler)
@@ -49,8 +52,17 @@ mail = Mail(app)
 
 @app.route('/')
 def main_world():
-    return render_template('static/index.html')
-
+    account_sid = 'AC63b19cf6511058521818bc54b4abbc47'
+    auth_token = '11d2474824b2d7939b5ce756a900e9cd'
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+                .create(
+                     body="Test SMS.",
+                     from_='+12063503291',
+                     to='+6283863930860'
+                 )  	
+    return(message.sid)
+    ##return render_template('static/index.html')
 
 ## user sing up
 @app.route('/api/v1/signup',methods=['POST'])
@@ -77,7 +89,7 @@ def signUp():
         if(result):
             return json.dumps({'success':'false','data':'Username or email already'})
         else:
-            insert(_ava,_user,_email, _pass,_prodi,_ver)
+            insert(_ava,_user,_email,_pass,_prodi,_ver)
             return json.dumps({'html':'<span>Data Inserted </span>'})
     else:
         return json.dumps({'html':'<span>Enter the required fields</span>'})        

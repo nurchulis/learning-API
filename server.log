@@ -772,3 +772,696 @@ Traceback (most recent call last):
   File "api.py", line 141, in auth
     'username'    : requests['username']
 NameError: global name 'requests' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : _username
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : _username
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : _username
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 37, in _scan_once
+    nextchar = string[idx]
+IndexError: string index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/puspidep/learning-API/api.py", line 129, in auth
+    requests = json.loads(request.data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/json/__init__.py", line 205, in loads
+    return _json.loads(s, **kwargs)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/__init__.py", line 535, in loads
+    return cls(encoding=encoding, **kw).decode(s)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 79, in scan_once
+    return _scan_once(string, idx)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/simplejson/scanner.py", line 39, in _scan_once
+    raise JSONDecodeError(errmsg, string, idx)
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 131, in auth
+    abort(400)
+NameError: name 'abort' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : _username
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : _username
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : _username
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : requests['username']
+NameError: name '_username' is not defined
+Exception on /api/v1/auth [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 143, in auth
+    'username'    : requests['username']
+NameError: name '_username' is not defined
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 80, in signUp
+    insert(_ava,_user,_email, _pass,_prodi,_ver)
+  File "/home/puspidep/learning-API/api.py", line 98, in insert
+    VALUES (%s,%s,%s,%s,%s,%s)""",(avatar,username,email,password,prodi,verifed))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2147483647' for key 'PRIMARY'")
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 80, in signUp
+    insert(_ava,_user,_email, _pass,_prodi,_ver)
+  File "/home/puspidep/learning-API/api.py", line 98, in insert
+    VALUES (%s,%s,%s,%s,%s,%s)""",(avatar,username,email,password,prodi,verifed))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2147483647' for key 'PRIMARY'")
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6281548250652'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6283863931193'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6283863931193'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6283863911111'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6283863911111'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6283863911111'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6285729629468'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1957, in make_response
+    'The view function did not return a valid response. The'
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6285729629468'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6287834074036'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6287834074036'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6287834074036'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 61, in main_world
+    to='+6282350952330'
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/rest/api/v2010/account/message/__init__.py", line 87, in create
+    data=data,
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/twilio/base/version.py", line 209, in create
+    raise self.exception(method, uri, response, 'Unable to create record')
+twilio.base.exceptions.TwilioRestException: HTTP 400 error: Unable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 92, in signUp
+    insert(_ava,_user,_email, _pass,_prodi,_ver)
+  File "/home/puspidep/learning-API/api.py", line 110, in insert
+    VALUES (%s,%s,%s,%s,%s,%s)""",(avatar,username,email,password,prodi,verifed))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2147483647' for key 'PRIMARY'")
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 92, in signUp
+    insert(_ava,_user,_email, _pass,_prodi,_ver)
+  File "/home/puspidep/learning-API/api.py", line 110, in insert
+    VALUES (%s,%s,%s,%s,%s,%s)""",(avatar,username,email,password,prodi,verifed))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2147483647' for key 'PRIMARY'")
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 92, in signUp
+    insert(_ava,_user,_email, _pass,_prodi,_ver)
+  File "/home/puspidep/learning-API/api.py", line 110, in insert
+    VALUES (%s,%s,%s,%s,%s,%s)""",(avatar,username,email,password,prodi,verifed))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2147483647' for key 'PRIMARY'")
+Exception on /api/v1/signup [POST]
+Traceback (most recent call last):
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/puspidep/learning-API/api.py", line 92, in signUp
+    insert(_ava,_user,_email,_pass,_prodi,_ver)
+  File "/home/puspidep/learning-API/api.py", line 110, in insert
+    VALUES (%s,%s,%s,%s,%s,%s)""",(avatar,username,email,password,prodi,verifed))
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/puspidep/virtualenv/learning-API/3.6/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1062, "Duplicate entry '2147483647' for key 'PRIMARY'")
